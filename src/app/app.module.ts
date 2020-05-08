@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { CountryListComponent } from './components/country-list/country-list.component';
 import { CountryDetailsComponent } from './components/country-details/country-details.component';
 import { CountryComponent } from './components/country/country.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
@@ -18,9 +17,7 @@ import { environment } from '../environments/environment';
     AppComponent,
     CountryListComponent,
     CountryDetailsComponent,
-    CountryComponent,
-    NavbarComponent,
-  ],
+    CountryComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

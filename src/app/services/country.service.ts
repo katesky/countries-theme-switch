@@ -22,9 +22,6 @@ export class CountryService {
   }
 
 
-
-
-
   getCountries(): Observable<Country[]> {
     return this.http.get(`${this.BASE_URL}all`) as Observable<Country[]>;
   }
@@ -36,9 +33,6 @@ export class CountryService {
   getSearchedCountriesByRegion(searchRegion: string): Observable<Country[]> {
     return this.http.get(`${this.BASE_URL}region/${searchRegion}`) as Observable<Country[]>;
   }
-
-
-
 
 
 }
