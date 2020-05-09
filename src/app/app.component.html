@@ -1,15 +1,32 @@
 <nav class="navbar" [ngClass]="{'dark-mode': this.countryService.mode }">
-  <div class="container">
-    <a class="navbar-brand mode" (click)="goToHomepage()">Where in the world?</a>
-    <p class="mode mt-3" (click)="changeMode()"><i class="fas fa-moon" *ngIf="this.countryService.mode"></i>
-      <i  class="far fa-moon" *ngIf="!this.countryService.mode"></i>&nbsp; <span >{{this.countryService.mode ? 'Dark Mode' : 'Light Mode'}}</span>
-
-    </p>
+  <div class="container" *ngIf="podcast">
+    <a target="_blank" href="{{podcast.home_page_url}}" class="navbar-brand mode">{{podcast.title}}</a>
+    <span [innerHTML]="podcast.description"></span>
   </div>
 </nav>
 
-<div class="real-deal" [ngClass]="{'dark-mode': this.countryService.mode }">
-  <div class="container">
-    <router-outlet></router-outlet>
+<div class="real-deal">
+  <div class="container" *ngIf="podcast">
+    <div class="country-countainer mt-5">
+      <div *ngFor="let item of podcast.items">
+
+        <div class="card shadow" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-sine">
+          <div class="list-content">
+            <p class="country-name">{{item.title}}</p>
+            <div class="sub-content">
+              <p><span class="bold-header">Date Published:</span> <span class="bold-header-value">
+                  {{item.date_published | date}} </span></p>
+              <p><a class="bold-header" target="_blank" href="{{item.url}}">Podcast url</a></p>
+              <button>Add to faves</button>
+
+              <p><span class="bold-header-value trim" [innerHTML]="item.summary"> </span></p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
   </div>
 </div>

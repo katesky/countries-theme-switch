@@ -15,7 +15,7 @@ export class CountryService {
 
   constructor(private http: HttpClient) {
     if (localStorage.getItem('mode')) {
-      this.mode = !!localStorage.getItem('mode');
+      this.mode = false;
       return;
     }
     // this.mode = false;

@@ -19,8 +19,7 @@ import { environment } from '../environments/environment';
     CountryDetailsComponent,
     CountryComponent],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
+    BrowserModule ,
     HttpClientModule,
     FormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
