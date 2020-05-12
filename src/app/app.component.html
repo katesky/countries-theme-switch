@@ -1,12 +1,12 @@
-<nav class="navbar" [ngClass]="{'dark-mode': this.countryService.mode }">
-  <div class="container" *ngIf="podcast">
+<nav class="navbar" >
+  <div class="container" *ngIf="podcast$ | async as podcast">
     <a target="_blank" href="{{podcast.home_page_url}}" class="navbar-brand mode">{{podcast.title}}</a>
     <span [innerHTML]="podcast.description"></span>
   </div>
 </nav>
 
 <div class="real-deal">
-  <div class="container" *ngIf="podcast">
+  <div class="container" *ngIf="podcast$| async as podcast">
     <div class="country-countainer mt-5">
       <div *ngFor="let item of podcast.items">
 
@@ -21,7 +21,7 @@
 
               <p><span class="bold-header-value trim" [innerHTML]="item.summary"> </span></p>
             </div>
-          </div>
+          </div>                                                                                                                                                                                
 
         </div>
 
